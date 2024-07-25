@@ -13,8 +13,4 @@ git commit -m "$m"
 git push
 
 # Commit and push changes in each submodule
-git submodule foreach --recursive {
-    git add .
-    git commit -m "$m"
-    git push
-}
+git submodule foreach --recursive "git add .; git commit -m '$m'; git push"
